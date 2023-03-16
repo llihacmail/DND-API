@@ -8,4 +8,4 @@ const getUser_query = require('../port/getUser_query')
     }
 };
 
-module.exports = getUser
+module.exports = getUser;

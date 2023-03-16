@@ -18,38 +18,38 @@ provider:
 
 functions:
 
-  getUsers:
-    handler: ./index/getUsers
-    events:
-      - httpApi:
-          path: /
-          method: get
+  # getUsers:
+  #   handler: ./index/getUsers
+  #   events:
+  #     - httpApi:
+  #         path: /
+  #         method: get
 
   getUser:
-    handler: ./index/getUser
+    handler: ./index.getUser
     events:
       - httpApi:
           path: /{id}
           method: get
 
-  addUser:
-    handler: ./index/addUser
-    events:
-      - httpApi:
-          path: /add
-          method: put
+  # addUser:
+  #   handler: ./index/addUser
+  #   events:
+  #     - httpApi:
+  #         path: /add
+  #         method: put
 
-  updateUser:
-    handler: ./index/updateUser
-    events:
-      - httpApi:
-          path: /update
-          method: put
+  # updateUser:
+  #   handler: ./index/updateUser
+  #   events:
+  #     - httpApi:
+  #         path: /update
+  #         method: put
 
-  deleteUser:
-    handler: ./index/deleteUser
-    events:
-      - httpApi:
-          path: /
-          method: delete
+  # deleteUser:
+  #   handler: ./index/deleteUser
+  #   events:
+  #     - httpApi:
+  #         path: /
+  #         method: delete
   
