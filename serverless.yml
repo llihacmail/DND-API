@@ -4,11 +4,52 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs18.x
+  region: 'us-east-1'
+  environment:
+    USERS_TABLE: Users
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:*
+          Resource:
+            - "arn:aws:dynamodb:us-east-1:588908119015:table/Users"
 
 functions:
-  api:
-    handler: index.handler
+
+  getUsers:
+    handler: ./index/getUsers
     events:
       - httpApi:
           path: /
           method: get
+
+  getUser:
+    handler: ./index/getUser
+    events:
+      - httpApi:
+          path: /{id}
+          method: get
+
+  addUser:
+    handler: ./index/addUser
+    events:
+      - httpApi:
+          path: /add
+          method: put
+
+  updateUser:
+    handler: ./index/updateUser
+    events:
+      - httpApi:
+          path: /update
+          method: put
+
+  deleteUser:
+    handler: ./index/deleteUser
+    events:
+      - httpApi:
+          path: /
+          method: delete
+  
