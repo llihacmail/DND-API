@@ -37,7 +37,7 @@ functions:
     events:
       - httpApi:
           path: /add
-          method: put
+          method: post
 
   updateUser:
     handler: ./index.updateUser
@@ -50,6 +50,6 @@ functions:
     handler: ./index.deleteUser
     events:
       - httpApi:
-          path: /
+          path: /delete
           method: delete
   
