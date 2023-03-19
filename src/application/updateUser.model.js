@@ -2,10 +2,10 @@
 const assert = require('assert');
 const objectid = require('objectid');
 
-function UpdateUserModel({UserID}) {
-    assert(UserID && typeof UserID === 'string', `Username must be a string, instead got ${typeof UserID}` );
+function UpdateUserModel({UserID, username}) {
+    assert(username && typeof username === 'string', `Username must be a string, instead got ${typeof UserID}` );
     return {
-        UserID: objectid(),
+        UserID: UserID,
         username: username,
     }
 }

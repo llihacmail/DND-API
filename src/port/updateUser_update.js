@@ -8,8 +8,16 @@ async function updateUser_update(user) {
         const query = {
             TableName: process.env.USERS_TABLE,
             Item: user,
-            ExpressionAttributes: {
-                "uId": "UserID"
+            ExpressionAttributesNames: {
+                "#uId": "UserID",
+                "#username": "username"
+            },
+            ExpressionAttributeValues: {
+                ":a": user.username
+            },
+            UpdateExpression: "set username = :a",
+            Key: {
+                UserID: user.UserID
             }
         }
         await dynamoDb.update(query).promise();
