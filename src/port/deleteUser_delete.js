@@ -13,7 +13,6 @@ async function deleteUser_delete(user) {
             }
         }
         await dynamoDb.delete(query).promise();
-        return user;
     }
     catch (err) {
         throw err
