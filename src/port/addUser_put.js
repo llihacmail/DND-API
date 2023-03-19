@@ -4,7 +4,7 @@ const { USERS_TABLE } = process.env //to import from .yml
 
 async function addUser_put(user) {
     try {
-        console.log(user)
+        console.log(user);
         const query = {
             TableName: process.env.USERS_TABLE,
             Item: user,
@@ -14,7 +14,7 @@ async function addUser_put(user) {
             }
         }
         await dynamoDb.put(query).promise();
-        return user
+        return user;
     }
     catch (err) {
         if (err.code === "ConditionalCheckFailedException") { // dynamodb condition for UserID
