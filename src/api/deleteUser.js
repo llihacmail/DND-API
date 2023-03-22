@@ -1,5 +1,5 @@
 const deleteUser_delete = require('../port/deleteUser_delete')
-const DeleteUserModel = require('../application/deleteUser.model');
+const DeleteUserModel = require('../application/DeleteUser.model');
 
  const deleteUser = async (event) => {
     const payload = event.body;

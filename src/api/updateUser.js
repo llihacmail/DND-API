@@ -3,7 +3,6 @@ const UpdateUserModel = require("../application/UpdateUser.model.js");
 
 const updateUser = async (event) => {
     const payload = event.body;
-
     try {
         console.info("updating user", payload);
         const updateUserModel = await UpdateUserModel(payload);
